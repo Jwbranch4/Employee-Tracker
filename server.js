@@ -2,7 +2,7 @@ const express = require("express");
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
 const cTable = require("console.table");
-const PORT = process.env.PORT || 3001;
+//const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(express.urlencoded({ extended: false }));
@@ -39,6 +39,28 @@ let questions = [
     type: "input",
     message: "Please name the department you want to add.",
     name: "AddDepartment",
+    when: (answers) => answers.WhatToDo === "add a department",
+  },
+  {
+    type: "input",
+    message:
+      "Please name the title, salary, department_id of the role you want to add.",
+    name: "AddRole",
+    when: (answers) => answers.WhatToDo === "add a role",
+  },
+  {
+    type: "input",
+    message:
+      "Please give the first name, last name, roles id, manager id of new employee.",
+    name: "AddEmployee",
+    when: (answers) => answers.WhatToDo === "add an employee",
+  },
+  {
+    type: "input",
+    message:
+      "Please give the unique employee id then first name, last name, roles id, manager id of the employee.",
+    name: "UpdateEmployee",
+    when: (answers) => answers.WhatToDo === "update an employee",
   },
 ];
 
@@ -94,11 +116,47 @@ function getData() {
       );
       console.table(answers.WhatToDo);
     } else if (answers.WhatToDo === "add a role") {
-      console.log(answers.WhatToDo);
+      db.query(
+        `INSERT INTO roles (title, salary, department_id)
+        VALUES (${answers.AddRole});`,
+        function (err, results) {
+          if (err) {
+            console.log(err);
+            return getData();
+          }
+          console.table(results);
+          return getData();
+        }
+      );
+      console.table(answers.WhatToDo);
     } else if (answers.WhatToDo === "add an employee") {
-      console.log(answers.WhatToDo);
+      db.query(
+        `INSERT INTO employee (first_name, last_name, roles_id, manager_id)
+        VALUES (${answers.AddEmployee});`,
+        function (err, results) {
+          if (err) {
+            console.log(err);
+            return getData();
+          }
+          console.table(results);
+          return getData();
+        }
+      );
+      console.table(answers.WhatToDo);
     } else if (answers.WhatToDo === "update an employee") {
-      console.log(answers.WhatToDo);
+      db.query(
+        `REPLACE INTO employee (id, first_name, last_name, roles_id, manager_id)
+        VALUES (${answers.UpdateEmployee});`,
+        function (err, results) {
+          if (err) {
+            console.log(err);
+            return getData();
+          }
+          console.table(results);
+          return getData();
+        }
+      );
+      console.table(answers.WhatToDo);
     }
   });
 }
