@@ -16,13 +16,13 @@ A command-line application to manage a company's employee database, using Node.j
 | --------------------------------------------- | ------------------------------------------------------ |
 | https://github.com/Jwbranch4/Employee-Tracker | https://watch.screencastify.com/v/JiroyvOkw9xuayvCllEu |
 
-![screenshot](/images/2021-11-01.png)
+![screenshot](/images/01.png)
 
-![screenshot](/images/2021-11-01.png)
+![screenshot](/images/02.png)
 
-![screenshot](/images/2021-11-01.png)
+![screenshot](/images/03.png)
 
-![screenshot](/images/2021-11-01.png)
+![screenshot](/images/04.png)
 
 ## Credits
 
@@ -51,3 +51,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+021-11-01
