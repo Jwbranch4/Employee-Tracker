@@ -12,9 +12,9 @@ A command-line application to manage a company's employee database, using Node.j
 
 ## Links
 
-| To github repository:                         | To video: |
-| --------------------------------------------- | --------- |
-| https://github.com/Jwbranch4/Employee-Tracker |           |
+| To github repository:                         | To video:                                              |
+| --------------------------------------------- | ------------------------------------------------------ |
+| https://github.com/Jwbranch4/Employee-Tracker | https://watch.screencastify.com/v/JiroyvOkw9xuayvCllEu |
 
 ![screenshot](/images/2021-11-01.png)
 
